@@ -1,11 +1,13 @@
 class UserException extends Error {
   constructor(status, message) {
+    console.log(status, message);
     super(message);
     this.status = status;
     this.message = message;
     this.name = this.constructor.name;
+
     Error.captureStackTrace(this.constructor);
   }
 }
 
-export default new UserException();
+export default UserException;
